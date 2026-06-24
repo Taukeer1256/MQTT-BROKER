@@ -1,0 +1,22 @@
+[package]
+name = "mqtt-broker"
+version = "0.1.0"
+edition = "2021"
+description = "Mini MQTT v3.1.1 broker built from scratch"
+
+[[bench]]
+name = "broker_bench"
+harness = false
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+bytes = "1"
+tracing = "0.1"
+tracing-subscriber = "0.3"
+thiserror = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[dev-dependencies]
+criterion = { version = "0.5", features = ["async_tokio"] }
+tokio = { version = "1", features = ["full", "test-util"] }
